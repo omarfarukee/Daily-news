@@ -41,20 +41,31 @@ fetch('https://openapi.programming-hero.com/api/news/category/01')
 
 const cardDataLoad = cardData =>{
             const viewCard = document.getElementById('cards')
+
             // console.log(cardData)
         cardData.forEach(newsOnCard =>{
                 const viewCardData = document.createElement('div') 
+                viewCardData.classList.add('col')
                 viewCardData.innerHTML = `
-                <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
-                </div>
-              <div class="col-md-8">
+                <div class="card h-100">
+                    <img src="${newsOnCard.image_url}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
+                    <h5 class="card-title">${newsOnCard.title}</h5>
+                    <p class="card-text">${newsOnCard.details}</p>
+                     <div class="d-flex justify-content-between">
+                        <div class=' d-flex pt-2'>
+                            <img src="${newsOnCard.author.img}" class="" alt="..." style="height:45px; width:44px;border-radius: 50%;
+                            ">
+                            <div>
+                            <p class='ms-2'>${newsOnCard.author.name} <br> ${newsOnCard.author.published_date}</p>
+                            
+                            </div>
+                        </div >
+                            <h6 class="pt-4">1.3m</h6>
+                            <button class='btn btn-info' style="height:50px;"> see more </button>
+                        </div>
+                    </div> 
+                </div>   
                 `
             viewCard.appendChild(viewCardData)
                 console.log(newsOnCard)
