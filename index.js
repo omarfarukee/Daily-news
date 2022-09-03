@@ -37,4 +37,27 @@ const newsCategory = category =>{
 
 fetch('https://openapi.programming-hero.com/api/news/category/01')
 .then(res => res.json())
-.then(data => console.log(data.data))
+.then(data => cardDataLoad(data.data))
+
+const cardDataLoad = cardData =>{
+            const viewCard = document.getElementById('cards')
+            // console.log(cardData)
+        cardData.forEach(newsOnCard =>{
+                const viewCardData = document.createElement('div') 
+                viewCardData.innerHTML = `
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+                `
+            viewCard.appendChild(viewCardData)
+                console.log(newsOnCard)
+        })
+        
+}
