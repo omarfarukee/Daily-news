@@ -1,5 +1,4 @@
 
-
 fetch('https://openapi.programming-hero.com/api/news/categories')
 .then(res => res.json())
 .then(data =>  newsCategory(data.data.news_category))
@@ -74,8 +73,8 @@ loader(true)
 })
 
 
-const loader = isLoading => {
-    if (isLoading) {
+const loader = Loading => {
+    if (Loading) {
         const load = document.getElementById('loader')
         load.classList.remove('d-none')
     }
@@ -109,7 +108,7 @@ const cardDataLoad = cardData =>{
                             </div>
                         </div >
                             <h6 class="pt-4">'${newsOnCard.total_view}'</h6>
-                            <button class='btn btn-info' style="height:50px;" onclick="loadPhoneDetailFull('${newsOnCard._id}')" data-bs-toggle="modal"  data-bs-target="#staticBackdrop"> see more </button>
+                            <button class='btn btn-info' style="height:50px;" onclick="loadCardDetailFull('${newsOnCard._id}')" data-bs-toggle="modal"  data-bs-target="#staticBackdrop"> see more </button>
                         </div>
                     </div> 
                 </div>   
@@ -118,7 +117,7 @@ const cardDataLoad = cardData =>{
         })
         
 }
-const loadPhoneDetailFull =async id =>{
+const loadCardDetailFull =async id =>{
     const urls = `https://openapi.programming-hero.com/api/news/${id}`
     fetch(urls)
     .then(res => res.json())
