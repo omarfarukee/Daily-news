@@ -1,9 +1,11 @@
+
+
 fetch('https://openapi.programming-hero.com/api/news/categories')
 .then(res => res.json())
-.then(data => newsCategory(data.data.news_category))
-
-const newsCategory = category =>{
-    const categoryList = document.getElementById('category-list')
+.then(data =>  newsCategory(data.data.news_category))
+    
+    const newsCategory = category =>{
+    console.log(category)
 
     const  first =   document.getElementById('first')
     first.innerText = category[0].category_name
@@ -21,27 +23,72 @@ const newsCategory = category =>{
     seventh.innerText = category[6].category_name
     const  eighth =   document.getElementById('th8')
     eighth.innerText = category[7].category_name
-
-        console.log(category)
-    // category.forEach( news => {
-    //         const addCategory = document.createElement('div')
-    //         addCategory.classList.add('cat')
-    //         addCategory.innerHTML = `
-    //             <h6>${news.category_name}</h6>
-    //         `
-    //         categoryList.appendChild(addCategory)
-    //         console.log(news)
-    // })
-    
 }
-
+document.getElementById('first').addEventListener('click', function(){
 fetch('https://openapi.programming-hero.com/api/news/category/01')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
+loader(true)
+})
+document.getElementById('second').addEventListener('click', function(){
+fetch('https://openapi.programming-hero.com/api/news/category/02')
+.then(res => res.json())
+.then(data => cardDataLoad(data.data))
+loader(true)
+})
+document.getElementById('rd3').addEventListener('click', function(){
+fetch('https://openapi.programming-hero.com/api/news/category/03')
+.then(res => res.json())
+.then(data => cardDataLoad(data.data))
+loader(true)
+})
+document.getElementById('th4').addEventListener('click', function(){
+fetch('https://openapi.programming-hero.com/api/news/category/04')
+.then(res => res.json())
+.then(data => cardDataLoad(data.data))
+loader(true)
+})
+document.getElementById('th5').addEventListener('click', function(){
+fetch('https://openapi.programming-hero.com/api/news/category/05')
+.then(res => res.json())
+.then(data => cardDataLoad(data.data))
+loader(true)
+})
+document.getElementById('th6').addEventListener('click', function(){
+fetch('https://openapi.programming-hero.com/api/news/category/06')
+.then(res => res.json())
+.then(data => cardDataLoad(data.data))
+loader(true)
+})
+document.getElementById('th7').addEventListener('click', function(){
+fetch('https://openapi.programming-hero.com/api/news/category/07')
+.then(res => res.json())
+.then(data => cardDataLoad(data.data))
+loader(true)
+})
+document.getElementById('th8').addEventListener('click', function(){
+fetch('https://openapi.programming-hero.com/api/news/category/08')
+.then(res => res.json())
+.then(data => cardDataLoad(data.data))
+loader(true)
+})
+
+
+const loader = isLoading => {
+    if (isLoading) {
+        const load = document.getElementById('loader')
+        load.classList.remove('d-none')
+    }
+    else{
+        const load = document.getElementById('loader')
+        load.classList.add('d-none')
+    }
+}
 
 const cardDataLoad = cardData =>{
             const viewCard = document.getElementById('cards')
-
+            viewCard.innerHTML = ''
+            loader(false)
             // console.log(cardData)
         cardData.forEach(newsOnCard =>{
                 const viewCardData = document.createElement('div') 
@@ -61,14 +108,28 @@ const cardDataLoad = cardData =>{
                             
                             </div>
                         </div >
-                            <h6 class="pt-4">1.3m</h6>
-                            <button class='btn btn-info' style="height:50px;"> see more </button>
+                            <h6 class="pt-4">'${newsOnCard.total_view}'</h6>
+                            <button class='btn btn-info' style="height:50px;" onclick="loadPhoneDetailFull('${newsOnCard._id}')" data-bs-toggle="modal"  data-bs-target="#staticBackdrop"> see more </button>
                         </div>
                     </div> 
                 </div>   
                 `
             viewCard.appendChild(viewCardData)
-                console.log(newsOnCard)
         })
         
 }
+const loadPhoneDetailFull =async id =>{
+    const urls = `https://openapi.programming-hero.com/api/news/${id}`
+    fetch(urls)
+    .then(res => res.json())
+    .then(data => detailsFull(data.data))
+}
+    const detailsFull = detail => {
+        const titles = document.getElementById('title-modal')
+        titles.innerText = detail[0].title
+        const detailsModal = document.getElementById('details-modal')
+        detailsModal.innerText = detail[0].details
+            
+    }
+
+
