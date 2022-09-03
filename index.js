@@ -1,6 +1,6 @@
 fetch('https://openapi.programming-hero.com/api/news/categories')
 .then(res => res.json())
-.then(res => newsCategory(res.data.news_category))
+.then(data => newsCategory(data.data.news_category))
 
 const newsCategory = category =>{
     const categoryList = document.getElementById('category-list')
@@ -34,3 +34,7 @@ const newsCategory = category =>{
     // })
     
 }
+
+fetch('https://openapi.programming-hero.com/api/news/category/01')
+.then(res => res.json())
+.then(data => console.log(data.data))
