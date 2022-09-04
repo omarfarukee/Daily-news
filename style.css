@@ -1,0 +1,64 @@
+
+.btn-c{
+     width: 150px;
+     height: 50px;
+     margin-left: 10px;
+     border: none;
+     border-radius: 10px;
+}
+.title-height{
+   height: 60px;
+}
+#home{
+    background-color: lightblue;
+}
+.footer{
+ 
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ background-color: rgb(236, 223, 223);
+
+}
+@media only screen  and (max-width: 687px) { 
+       .all-btn{
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         
+       }
+       .btn-c{
+     width: 100px;
+     height:50px;
+     margin-left: 10px;
+     border: none;
+     border-radius: 10px;
+     font-size:15px;
+}
+.count{
+   font-size:15px;
+   padding-top:7px;
+}
+#see-more{
+   height:20px;
+   margin-top: 5px;
+   font-size: 15px;
+}
+#images{
+   height: 30px;
+   width: 30px;
+}
+#author{
+     font-size:10px;
+
+}
+.eye{
+ font-size: 10px;
+}
+ }
+ @media screen and (min-width:689px) and (max-width:991px){
+   .all-btn{
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         
+       }
+}

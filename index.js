@@ -1,8 +1,4 @@
 
-// fetch('https://openapi.programming-hero.com/api/news/01')
-// .then(res => res.json())
-// .then(data =>  cardDataLoad(data.data.news_category))
-
 const loadedCategory = async () => {
     const url = 'https://openapi.programming-hero.com/api/news/categories';
 try{
@@ -16,25 +12,22 @@ catch(error){
 }
  loadedCategory()
  const newsCategory = category =>{
-
-    const  home =   document.getElementById('home')
-    home.innerText = category[7].category_name
-    const  first =   document.getElementById('first')
-    first.innerText = category[0].category_name
-    const  second =   document.getElementById('second')
-    second.innerText = category[1].category_name
-    const  third =   document.getElementById('rd3')
-    third.innerText = category[2].category_name
-    const  forth =   document.getElementById('th4')
-    forth.innerText = category[3].category_name
-    const  fifth =   document.getElementById('th5')
-    fifth.innerText = category[4].category_name
-    const  sixth =   document.getElementById('th6')
-    sixth.innerText = category[5].category_name
-    const  seventh =   document.getElementById('th7')
-    seventh.innerText = category[6].category_name
-    const  eighth =   document.getElementById('th8')
-    eighth.innerText = category[7].category_name
+         const  first =   document.getElementById('first')
+           first.innerText = category[0].category_name
+             const  second =   document.getElementById('second')
+               second.innerText = category[1].category_name
+                 const  third =   document.getElementById('rd3')
+                  third.innerText = category[2].category_name
+                   const  forth =   document.getElementById('th4')
+                     forth.innerText = category[3].category_name
+                     const  fifth =   document.getElementById('th5')
+                    fifth.innerText = category[4].category_name
+                 const  sixth =   document.getElementById('th6')
+               sixth.innerText = category[5].category_name
+              const  seventh =   document.getElementById('th7')
+            seventh.innerText = category[6].category_name
+          const  eighth =   document.getElementById('th8')
+     eighth.innerText = category[7].category_name
 }
 
 document.getElementById('home').addEventListener('click', function(){
@@ -129,6 +122,10 @@ const loader = Loading => {
         load.classList.add('d-none')
     }
 }
+ fetch('https://openapi.programming-hero.com/api/news/category/08')
+ .then(res => res.json())
+ .then(tata =>  cardDataLoad(tata.data));
+ 
 
 const cardDataLoad = cardData =>{
             const length = cardData.length
@@ -150,7 +147,6 @@ const cardDataLoad = cardData =>{
                 return small.total_view - big.total_view;
              });
         cardData.forEach(newsOnCard =>{
-            console.log(newsOnCard)
                 const viewCardData = document.createElement('div') 
                 viewCardData.classList.add('col')
                 viewCardData.innerHTML = `
@@ -158,7 +154,7 @@ const cardDataLoad = cardData =>{
                     <img src="${newsOnCard.image_url ? newsOnCard.image_url : 'Did not find'}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title title-height">${newsOnCard.title ? newsOnCard.title : 'Did not find'}</h5>
-                    <p class="card-text">${newsOnCard.details.slice(0,200) ? newsOnCard.details.slice(0, 200) : 'Did not find'}...</p>
+                    <p class="card-text">${newsOnCard.details.slice(0,200) ? newsOnCard.details.slice(0, 87) : 'Did not find'}...</p>
                      <div class="d-flex justify-content-between ">
                         <div class=' d-flex pt-2'>
                             <img id='images' src="${newsOnCard.author.img ? newsOnCard.author.img : 'Did Not find'}" class="" alt="..." style="height:45px; width:44px;border-radius: 50%;
@@ -169,7 +165,7 @@ const cardDataLoad = cardData =>{
                             </div>
                         </div >
                             <h6 class="pt-4 eye"><i class="fa-solid fa-eye"></i> ${newsOnCard.total_view ? newsOnCard.total_view : "00"}K</h6>
-                            <button class='btn btn-info' id='see-more' style="height:50px;" onclick="loadCardDetailFull('${newsOnCard._id ? newsOnCard._id : 'Did not find'}')" data-bs-toggle="modal"  data-bs-target="#staticBackdrop"> see more </button>
+                            <button class='btn btn-info' id='see-more' style="height:50px;" onclick="loadCardDetailFull('${newsOnCard._id ? newsOnCard._id : 'Did not find'}')" data-bs-toggle="modal"  data-bs-target="#staticBackdrop">Details <i class="fa-solid fa-circle-info"></i></i></button>
                         </div>
                     </div> 
                 </div>
@@ -179,8 +175,6 @@ const cardDataLoad = cardData =>{
         })
         
 }
-
-
 const loadCardDetailFull = async id =>{
     const urls = `https://openapi.programming-hero.com/api/news/${id}`
     try{
@@ -191,9 +185,6 @@ const loadCardDetailFull = async id =>{
     catch(error){
         console.log(error);
     }
-    // fetch(urls)
-    // .then(res => res.json())
-    // .then(data => detailsFull(data.data))
 }
     const detailsFull = detail => {
         const titles = document.getElementById('title-modal')
