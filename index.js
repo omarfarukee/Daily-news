@@ -34,101 +34,100 @@ document.getElementById('home').addEventListener('click', function(){
     const disable = document.getElementById('first')
     disable.classList.remove('home')
     const footer = document.getElementById('footers')
+    footer.classList.add('d-none')
+    fetch('https://openapi.programming-hero.com/api/news/category/08')
+    .then(res => res.json())
+    .then(data => cardDataLoad(data.data))
+    loader(true)
+})
+
+document.getElementById('first').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
+    const footer = document.getElementById('footers')
+    footer.classList.remove('d-none')
+    fetch('https://openapi.programming-hero.com/api/news/category/01')
+    .then(res => res.json())
+    .then(data => cardDataLoad(data.data))
+    loader(true)
+})
+
+document.getElementById('second').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
+    const footer = document.getElementById('footers')
+    footer.classList.remove('d-none')
+    fetch('https://openapi.programming-hero.com/api/news/category/02')
+    .then(res => res.json())
+    .then(data => cardDataLoad(data.data))
+    loader(true)
+})
+
+document.getElementById('rd3').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
+    const footer = document.getElementById('footers')
+    footer.classList.remove('d-none')
+    fetch('https://openapi.programming-hero.com/api/news/category/03')
+    .then(res => res.json())
+    .then(data => cardDataLoad(data.data))
+    loader(true)
+})
+
+document.getElementById('th4').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
+    const footer = document.getElementById('footers')
+    footer.classList.remove('d-none')
+    fetch('https://openapi.programming-hero.com/api/news/category/04')
+    .then(res => res.json())
+    .then(data => cardDataLoad(data.data))
+    loader(true)
+})
+
+document.getElementById('th5').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
+    const footer = document.getElementById('footers')
+    footer.classList.remove('d-none')
+    fetch('https://openapi.programming-hero.com/api/news/category/05')
+    .then(res => res.json())
+    .then(data => cardDataLoad(data.data))
+    loader(true)
+})
+
+document.getElementById('th6').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
+    const footer = document.getElementById('footers')
+    footer.classList.add('d-none')
+    fetch('https://openapi.programming-hero.com/api/news/category/06')
+    .then(res => res.json())
+    .then(data => cardDataLoad(data.data))
+    loader(true)
+})
+
+document.getElementById('th7').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
+    const footer = document.getElementById('footers')
+    footer.classList.remove('d-none')
+    fetch('https://openapi.programming-hero.com/api/news/category/07')
+    .then(res => res.json())
+    .then(data => cardDataLoad(data.data))
+    loader(true)
+})
+
+document.getElementById('th8').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
+    const footer = document.getElementById('footers')
     footer.classList.remove('d-none')
     fetch('https://openapi.programming-hero.com/api/news/category/08')
     .then(res => res.json())
     .then(data => cardDataLoad(data.data))
     loader(true)
-    })
-
-document.getElementById('first').addEventListener('click', function(){
-const disable = document.getElementById('first')
-disable.classList.add('home')
-const footer = document.getElementById('footers')
-footer.classList.remove('d-none')
-fetch('https://openapi.programming-hero.com/api/news/category/01')
-.then(res => res.json())
-.then(data => cardDataLoad(data.data))
-loader(true)
 })
-
-document.getElementById('second').addEventListener('click', function(){
-const disable = document.getElementById('first')
-disable.classList.remove('home')
-const footer = document.getElementById('footers')
-footer.classList.remove('d-none')
-fetch('https://openapi.programming-hero.com/api/news/category/02')
-.then(res => res.json())
-.then(data => cardDataLoad(data.data))
-loader(true)
-})
-
-document.getElementById('rd3').addEventListener('click', function(){
-const disable = document.getElementById('first')
-disable.classList.remove('home')
-const footer = document.getElementById('footers')
-footer.classList.remove('d-none')
-fetch('https://openapi.programming-hero.com/api/news/category/03')
-.then(res => res.json())
-.then(data => cardDataLoad(data.data))
-loader(true)
-})
-
-document.getElementById('th4').addEventListener('click', function(){
-const disable = document.getElementById('first')
-disable.classList.remove('home')
-const footer = document.getElementById('footers')
-footer.classList.remove('d-none')
-fetch('https://openapi.programming-hero.com/api/news/category/04')
-.then(res => res.json())
-.then(data => cardDataLoad(data.data))
-loader(true)
-})
-
-document.getElementById('th5').addEventListener('click', function(){
-const disable = document.getElementById('first')
-disable.classList.remove('home')
-const footer = document.getElementById('footers')
-footer.classList.remove('d-none')
-fetch('https://openapi.programming-hero.com/api/news/category/05')
-.then(res => res.json())
-.then(data => cardDataLoad(data.data))
-loader(true)
-})
-
-document.getElementById('th6').addEventListener('click', function(){
-const disable = document.getElementById('first')
-disable.classList.remove('home')
-const footer = document.getElementById('footers')
-footer.classList.add('d-none')
-fetch('https://openapi.programming-hero.com/api/news/category/06')
-.then(res => res.json())
-.then(data => cardDataLoad(data.data))
-loader(true)
-})
-
-document.getElementById('th7').addEventListener('click', function(){
-const disable = document.getElementById('first')
-disable.classList.remove('home')
-const footer = document.getElementById('footers')
-footer.classList.remove('d-none')
-fetch('https://openapi.programming-hero.com/api/news/category/07')
-.then(res => res.json())
-.then(data => cardDataLoad(data.data))
-loader(true)
-})
-
-document.getElementById('th8').addEventListener('click', function(){
-const disable = document.getElementById('first')
-disable.classList.remove('home')
-const footer = document.getElementById('footers')
-footer.classList.remove('d-none')
-fetch('https://openapi.programming-hero.com/api/news/category/08')
-.then(res => res.json())
-.then(data => cardDataLoad(data.data))
-loader(true)
-})
-
 
 const loader = Loading => {
     if (Loading) {
@@ -211,7 +210,7 @@ const loadCardDetailFull = async id =>{
          detailsModal.innerText = detail[0].details
         const picture = document.getElementById('pic')
          picture.innerHTML = `
-                <img src="${detail[0].thumbnail_url}" alt="" style="height:90px; width:90px; margin-left:25%;" class='rounded-4'>`
+        <img src="${detail[0].thumbnail_url}" alt="" style="height:90px; width:90px; margin-left:25%;" class='rounded-4'>`
 }
 
 
