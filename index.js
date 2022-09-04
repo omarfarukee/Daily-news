@@ -31,6 +31,8 @@ catch(error){
 }
 
 document.getElementById('home').addEventListener('click', function(){
+    const disable = document.getElementById('first')
+    disable.classList.remove('home')
     const footer = document.getElementById('footers')
     footer.classList.remove('d-none')
     fetch('https://openapi.programming-hero.com/api/news/category/08')
@@ -40,8 +42,10 @@ document.getElementById('home').addEventListener('click', function(){
     })
 
 document.getElementById('first').addEventListener('click', function(){
-  const footer = document.getElementById('footers')
-  footer.classList.remove('d-none')
+const disable = document.getElementById('first')
+disable.classList.add('home')
+const footer = document.getElementById('footers')
+footer.classList.remove('d-none')
 fetch('https://openapi.programming-hero.com/api/news/category/01')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
@@ -49,8 +53,10 @@ loader(true)
 })
 
 document.getElementById('second').addEventListener('click', function(){
-    const footer = document.getElementById('footers')
-    footer.classList.remove('d-none')
+const disable = document.getElementById('first')
+disable.classList.remove('home')
+const footer = document.getElementById('footers')
+footer.classList.remove('d-none')
 fetch('https://openapi.programming-hero.com/api/news/category/02')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
@@ -58,8 +64,10 @@ loader(true)
 })
 
 document.getElementById('rd3').addEventListener('click', function(){
-    const footer = document.getElementById('footers')
-    footer.classList.remove('d-none')
+const disable = document.getElementById('first')
+disable.classList.remove('home')
+const footer = document.getElementById('footers')
+footer.classList.remove('d-none')
 fetch('https://openapi.programming-hero.com/api/news/category/03')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
@@ -67,8 +75,10 @@ loader(true)
 })
 
 document.getElementById('th4').addEventListener('click', function(){
-    const footer = document.getElementById('footers')
-    footer.classList.remove('d-none')
+const disable = document.getElementById('first')
+disable.classList.remove('home')
+const footer = document.getElementById('footers')
+footer.classList.remove('d-none')
 fetch('https://openapi.programming-hero.com/api/news/category/04')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
@@ -76,8 +86,10 @@ loader(true)
 })
 
 document.getElementById('th5').addEventListener('click', function(){
-    const footer = document.getElementById('footers')
-    footer.classList.remove('d-none')
+const disable = document.getElementById('first')
+disable.classList.remove('home')
+const footer = document.getElementById('footers')
+footer.classList.remove('d-none')
 fetch('https://openapi.programming-hero.com/api/news/category/05')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
@@ -85,8 +97,10 @@ loader(true)
 })
 
 document.getElementById('th6').addEventListener('click', function(){
-    const footer = document.getElementById('footers')
-    footer.classList.add('d-none')
+const disable = document.getElementById('first')
+disable.classList.remove('home')
+const footer = document.getElementById('footers')
+footer.classList.add('d-none')
 fetch('https://openapi.programming-hero.com/api/news/category/06')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
@@ -94,8 +108,10 @@ loader(true)
 })
 
 document.getElementById('th7').addEventListener('click', function(){
-    const footer = document.getElementById('footers')
-    footer.classList.remove('d-none')
+const disable = document.getElementById('first')
+disable.classList.remove('home')
+const footer = document.getElementById('footers')
+footer.classList.remove('d-none')
 fetch('https://openapi.programming-hero.com/api/news/category/07')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
@@ -103,8 +119,10 @@ loader(true)
 })
 
 document.getElementById('th8').addEventListener('click', function(){
-    const footer = document.getElementById('footers')
-    footer.classList.remove('d-none')
+const disable = document.getElementById('first')
+disable.classList.remove('home')
+const footer = document.getElementById('footers')
+footer.classList.remove('d-none')
 fetch('https://openapi.programming-hero.com/api/news/category/08')
 .then(res => res.json())
 .then(data => cardDataLoad(data.data))
@@ -122,7 +140,7 @@ const loader = Loading => {
         load.classList.add('d-none')
     }
 }
- fetch('https://openapi.programming-hero.com/api/news/category/08')
+ fetch('https://openapi.programming-hero.com/api/news/category/01')
  .then(res => res.json())
  .then(tata =>  cardDataLoad(tata.data));
  
@@ -165,7 +183,7 @@ const cardDataLoad = cardData =>{
                             </div>
                         </div >
                             <h6 class="pt-4 eye"><i class="fa-solid fa-eye"></i> ${newsOnCard.total_view ? newsOnCard.total_view : "00"}K</h6>
-                            <button class='btn btn-info' id='see-more' style="height:50px;" onclick="loadCardDetailFull('${newsOnCard._id ? newsOnCard._id : 'Did not find'}')" data-bs-toggle="modal"  data-bs-target="#staticBackdrop">Details <i class="fa-solid fa-circle-info"></i></i></button>
+                            <button class='btn btn-info' id='see-more' style="height:50px;" onclick="loadCardDetailFull('${newsOnCard._id ? newsOnCard._id : 'Did not find'}')" data-bs-toggle="modal"  data-bs-target="#staticBackdrop">Detail <i class="fa-solid fa-book-open-reader"></i></button>
                         </div>
                     </div> 
                 </div>
